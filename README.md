@@ -122,9 +122,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-- Developer 1
-- Developer 2  
-- Developer 3
+- ADITYA SIRAS
+- SUSHANT FOKMARE
+- GAURI PATIL
 
 ## 🔗 Links
 
