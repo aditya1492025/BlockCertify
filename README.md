@@ -126,8 +126,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - SUSHANT FOKMARE
 - GAURI PATIL
 
-## 🔗 Links
-
-- [Demo](https://your-demo-link.com)
-- [Documentation](https://your-docs-link.com)
-- [Issues](https://github.com/your-username/BlockCertify/issues)
