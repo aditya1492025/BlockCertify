@@ -63,16 +63,13 @@ const Navbar = () => {
                 Dashboard
               </Button>
               
-              {user?.role === 'institution' && (
-                <>
-                  <Button color="inherit" onClick={() => navigate('/issue')} startIcon={<Assignment />}>
-                    Issue
-                  </Button>
-                  <Button color="inherit" onClick={() => navigate('/upload')} startIcon={<VerifiedUser />}>
-                    Upload
-                  </Button>
-                </>
-              )}
+              {/* Show Issue and Upload to any authenticated user so they are visible after login */}
+              <Button color="inherit" onClick={() => navigate('/issue')} startIcon={<Assignment />}>
+                Issue
+              </Button>
+              <Button color="inherit" onClick={() => navigate('/upload')} startIcon={<VerifiedUser />}>
+                Upload
+              </Button>
               
               <Chip 
                 label={user?.role} 

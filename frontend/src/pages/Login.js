@@ -7,7 +7,6 @@ import {
   Button, 
   Card, 
   CardContent,
-  Alert,
   Link,
   InputAdornment,
   IconButton
@@ -18,29 +17,32 @@ import {
   Visibility, 
   VisibilityOff 
 } from '@mui/icons-material';
-import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import { useNavigate, Link as RouterLink, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
+import { useAuth } from '../contexts/AuthContext';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   
   const { register, handleSubmit, formState: { errors } } = useForm();
-
+  const location = useLocation();
+  const { login } = useAuth();
   const onSubmit = async (data) => {
     setLoading(true);
     try {
       const response = await axios.post('/api/auth/login', data);
       
-      // Store token in localStorage
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      
-      toast.success('Login successful!');
-      navigate('/dashboard');
+        // Update auth context (this will also store token/user)
+        login(response.data.user, response.data.token);
+        
+  toast.success('Login successful!');
+  // Redirect to original page (if any) or home and replace history entry
+  const returnTo = location?.state?.from?.pathname || '/';
+  navigate(returnTo, { replace: true });
     } catch (error) {
       toast.error(error.response?.data?.error || 'Login failed');
     } finally {

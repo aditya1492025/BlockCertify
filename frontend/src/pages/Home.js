@@ -100,21 +100,36 @@ const Home = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '300px',
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  borderRadius: 2,
-                  backdropFilter: 'blur(10px)'
-                }}
-              >
-                <Typography variant="h4" sx={{ opacity: 0.7 }}>
-                  Certificate Demo
-                </Typography>
-              </Box>
+              <Card sx={{ p: 2, borderRadius: 2, bgcolor: 'rgba(255,255,255,0.95)' }}>
+                <CardContent>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
+                    <Box>
+                      <Typography variant="h5" component="div">
+                        Diploma in Blockchain Technologies
+                      </Typography>
+                      <Typography variant="subtitle2" color="text.secondary">
+                        Recipient: Alice Doe
+                      </Typography>
+                    </Box>
+                    <Chip label="Issued" className="status-badge issued" />
+                  </Box>
+
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
+                    Issued by: Example University
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    Date: Jan 1, 2025
+                  </Typography>
+
+                  <Typography variant="body2" color="text.secondary" sx={{ wordBreak: 'break-all' }}>
+                    Certificate ID: <code>ABC123DEF</code>
+                  </Typography>
+                </CardContent>
+                <CardActions sx={{ justifyContent: 'flex-end' }}>
+                  <Button size="small" onClick={() => navigate('/verify')}>Verify</Button>
+                  <Button size="small" onClick={() => { if (navigator.clipboard) navigator.clipboard.writeText('ABC123DEF'); }}>Copy ID</Button>
+                </CardActions>
+              </Card>
             </Grid>
           </Grid>
         </Container>
