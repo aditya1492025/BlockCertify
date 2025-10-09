@@ -187,9 +187,9 @@ By the end of 2 days, the project should have:
 ## 👥 Team Collaboration
 
 The project is structured for 3 developers to work in parallel:
-- **Developer 1**: Smart contracts, deployment, blockchain integration
-- **Developer 2**: Backend API, database, authentication
-- **Developer 3**: Frontend UI, Web3 integration, user experience
+- **Sushant Fokmare**: Smart contracts, deployment, blockchain integration
+- **Aditya Siras**: Backend API, database, authentication
+- **Gauri Patil**: Frontend UI, Web3 integration, user experience
 
 ---
 
