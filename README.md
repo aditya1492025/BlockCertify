@@ -46,7 +46,7 @@ BlockCertify/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/BlockCertify.git
+git clone https://github.com/aditya1492025/BlockCertify.git
 cd BlockCertify
 ```
 
