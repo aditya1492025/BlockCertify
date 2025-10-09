@@ -101,8 +101,8 @@ npx hardhat test
 ```
 ## 🖼️ Output Screenshot
 
-![BlockCerify](output1.png)
-![BlockCerify](output2.png)
+![BlockCerify](Output/output1.png)
+![BlockCerify](Output/output2.png)
 
 ## 📖 Documentation
 
