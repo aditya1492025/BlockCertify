@@ -41,7 +41,6 @@ BlockCertify/
 - Node.js (v16+)
 - npm or yarn
 - Git
-- MetaMask wallet
 
 ### Installation
 
