@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -61,6 +62,16 @@ if (process.env.MONGODB_URI) {
 app.use('/api/institutions', require('./routes/institutions'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/blockchain', require('./routes/blockchain'));
+
+// Serve static files from React build in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
+    
+    // Handle React routing, return all requests to React app
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+    });
+}
 
 // Health check endpoint
 app.get('/health', (req, res) => {

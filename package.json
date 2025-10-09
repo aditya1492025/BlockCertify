@@ -13,6 +13,8 @@
     "frontend": "cd frontend && npm start",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
     "clean": "hardhat clean",
     "coverage": "hardhat coverage"
   },
